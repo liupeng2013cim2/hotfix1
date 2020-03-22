@@ -24,7 +24,10 @@ public class FileUtils {
         /**
          * 只有cache dir有权限创建文件
          */
-        File fileDir = new File(context.getCacheDir(), "dex");
+        File fileDir = new File(context.getCacheDir(), "dex5");
+        if (fileDir.exists()) {
+            fileDir.delete();
+        }
         boolean result = fileDir.mkdir();
         Log.e(TAG, "result:" + result);
         //该目录下放置修复好的dex文件
